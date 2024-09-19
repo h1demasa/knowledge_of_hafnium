@@ -1,0 +1,153 @@
+diff --git a/qemu_v8.mk b/qemu_v8.mk
+index c61629a..a82b124 100644
+--- a/qemu_v8.mk
++++ b/qemu_v8.mk
+@@ -238,7 +238,8 @@ endif
+ 	rm -f $(BINARIES_PATH)/bl32_extra1.bin
+ 	rm -f $(BINARIES_PATH)/bl32_extra2.bin
+ 	rm -f $(BINARIES_PATH)/tos_fw_config.dtb
+-	rm -f $(BINARIES_PATH)/op-tee.pkg
++	rm -f $(BINARIES_PATH)/op-tee1.pkg
++	rm -f $(BINARIES_PATH)/op-tee2.pkg
+ ifeq ($(SPMC_AT_EL),1)
+ 	ln -sf $(TF_A_OUT)/fdts/spmc_el1_manifest.dtb \
+ 		$(BINARIES_PATH)/tos_fw_config.dtb
+@@ -251,7 +252,8 @@ else ifeq ($(SPMC_AT_EL),2)
+ 	ln -sf $(TF_A_OUT)/fdts/tb_fw_config.dtb \
+ 		$(BINARIES_PATH)/tb_fw_config.dtb
+ 	ln -sf $(HAFNIUM_BIN) $(BINARIES_PATH)/bl32.bin
+-	ln -sf $(TF_A_OUT)/op-tee.pkg $(BINARIES_PATH)/op-tee.pkg
++	ln -sf $(TF_A_OUT)/op-tee1.pkg $(BINARIES_PATH)/op-tee1.pkg
++	ln -sf $(TF_A_OUT)/op-tee2.pkg $(BINARIES_PATH)/op-tee2.pkg
+ else ifeq ($(SPMC_AT_EL),3)
+ 	ln -sf $(TF_A_OUT)/fdts/spmc_el3_manifest.dtb \
+ 		$(BINARIES_PATH)/tos_fw_config.dtb
+@@ -350,7 +352,7 @@ linux-cleaner: linux-cleaner-common
+ OPTEE_OS_COMMON_FLAGS += DEBUG=$(DEBUG) CFG_ARM_GICV3=$(GICV3)
+ OPTEE_OS_COMMON_FLAGS_SPMC_AT_EL_1 = CFG_CORE_SEL1_SPMC=y
+ OPTEE_OS_COMMON_FLAGS_SPMC_AT_EL_2 = CFG_CORE_SEL2_SPMC=y
+-OPTEE_OS_COMMON_FLAGS_SPMC_AT_EL_2 += CFG_ARM_GICV3=n CFG_CORE_HAFNIUM_INTC=y
++OPTEE_OS_COMMON_FLAGS_SPMC_AT_EL_2 += CFG_ARM_GICV3=n CFG_CORE_HAFNIUM_INTC=y CFG_FFA_CONSOLE=y
+ # [0e00.0000 0e2f.ffff] is reserved to early boot and SPMC
+ # [0e30.0000 0e33.ffff] is reserved manifest etc (op-tee.pkg)
+ OPTEE_OS_COMMON_FLAGS_SPMC_AT_EL_2 += CFG_TZDRAM_START=0x0e304000
+diff --git a/qemu_v8/optee_sp_manifest.dts b/qemu_v8/optee_sp_manifest.dts
+deleted file mode 100644
+index 35c2f4b..0000000
+--- a/qemu_v8/optee_sp_manifest.dts
++++ /dev/null
+@@ -1,54 +0,0 @@
+-/*
+- * Copyright (c) 2020, Arm Limited. All rights reserved.
+- * Copyright (c) 2022, Linaro Limited
+- *
+- * SPDX-License-Identifier: BSD-3-Clause
+- *
+- * This file is a Partition Manifest (PM) for a minimal Secure Partition (SP)
+- * that has additional optional properties defined.
+- *
+- */
+-
+-/dts-v1/;
+-
+-/ {
+-	compatible = "arm,ffa-manifest-1.0";
+-
+-	/* Properties */
+-	description = "op-tee";
+-	ffa-version = <0x00010001>; /* 31:16 - Major, 15:0 - Minor */
+-	uuid = <0xe0786148 0xe311f8e7 0x02005ebc 0x1bc5d5a5>;
+-	id = <1>;
+-	execution-ctx-count = <8>;
+-	exception-level = <2>; /* S-EL1 */
+-	execution-state = <0>; /* AARCH64 */
+-	load-address = <0xe300000>;
+-	mem-size = <0xd00000>;	/* OP-TEE specific extension */
+-	entrypoint-offset = <0x4000>;
+-	xlat-granule = <0>; /* 4KiB */
+-	boot-order = <0>;
+-	messaging-method = <0x3>; /* Direct messaging only */
+-	ns-interrupts-action = <1>; /* NS_ACTION_ME */
+-	notification-support;
+-
+-	/* Boot protocol */
+-	gp-register-num = <0x0>;
+-
+-	/* Boot Info */
+-	boot-info {
+-		compatible = "arm,ffa-manifest-boot-info";
+-		ffa_manifest;
+-	};
+-
+-	device-regions {
+-		compatible = "arm,ffa-manifest-device-regions";
+-
+-		uart1 {
+-			base-address = <0x00000000 0x09040000>;
+-			pages-count = <1>;
+-			attributes = <0x3>; /* read-write */
+-			/* SPI, level-triggered, secure, priority=1 */
+-			interrupts = <0x28 0xb01>;
+-		};
+-	};
+-};
+diff --git a/qemu_v8/sp_layout.json b/qemu_v8/sp_layout.json
+index c6a02a9..50754d6 100644
+--- a/qemu_v8/sp_layout.json
++++ b/qemu_v8/sp_layout.json
+@@ -1,6 +1,10 @@
+ {
+-	"op-tee" : {
++	"op-tee1" : {
+ 		"image": "../../optee_os/out/arm/core/tee-pager_v2.bin",
+-		"pm": "optee_sp_manifest.dts"
++		"pm": "optee_sp1_manifest.dts"
++	},
++	"op-tee2" : {
++		"image": "../../optee_os/out/arm/core/tee-pager_v2.bin",
++		"pm": "optee_sp2_manifest.dts"
+ 	}
+ }
+diff --git a/qemu_v8/spmc_el2_manifest.dts b/qemu_v8/spmc_el2_manifest.dts
+index bf267b2..a2f7fc1 100644
+--- a/qemu_v8/spmc_el2_manifest.dts
++++ b/qemu_v8/spmc_el2_manifest.dts
+@@ -28,9 +28,16 @@
+ 		vm1 {
+ 			is_ffa_partition;
+ 			load_address = <0xe300000>;
+-			debug_name = "op-tee";
++			debug_name = "op-tee1";
+ 			vcpu_count = <4>;
+-			mem_size = <0xd00000>;
++			mem_size = <0x680000>;
++		};
++		vm2 {
++			is_ffa_partition;
++			load_address = <0xe980000>;
++			debug_name = "op-tee2";
++			vcpu_count = <4>;
++			mem_size = <0x680000>;
+ 		};
+ 	};
+ 
+diff --git a/qemu_v8/tb_fw_config.dts b/qemu_v8/tb_fw_config.dts
+index 68f7b3b..23bd71e 100644
+--- a/qemu_v8/tb_fw_config.dts
++++ b/qemu_v8/tb_fw_config.dts
+@@ -10,9 +10,13 @@
+ / {
+ 	secure-partitions {
+ 		compatible = "arm,sp";
+-		op-tee {
++		op-tee1 {
+ 		       uuid = "486178e0-e7f8-11e3-bc5e-0002a5d5c51b";
+ 		       load-address = <0xe300000>;
+ 		};
++		op-tee2 {
++		       uuid = "486178e0-e7f8-11e3-bc5e-0002a5d5c51b";
++		       load-address = <0xe980000>;
++		};
+ 	};
+ };
+
