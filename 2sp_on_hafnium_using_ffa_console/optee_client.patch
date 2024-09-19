@@ -1,0 +1,25 @@
+diff --git a/libteec/src/tee_client_api.c b/libteec/src/tee_client_api.c
+index 512fdac..43266a3 100644
+--- a/libteec/src/tee_client_api.c
++++ b/libteec/src/tee_client_api.c
+@@ -166,6 +166,19 @@ TEEC_Result TEEC_InitializeContext(const char *name, TEEC_Context *ctx)
+ 	if (!ctx)
+ 		return TEEC_ERROR_BAD_PARAMETERS;
+ 
++	if (name) {
++		uint32_t gen_caps = 0;
++
++		snprintf(devname, sizeof(devname), "/dev/%s", name);
++		fd = teec_open_dev(devname, NULL, &gen_caps);
++		if (fd >= 0) {
++			ctx->imp.fd = fd;
++			ctx->imp.reg_mem = gen_caps & TEE_GEN_CAP_REG_MEM;
++			ctx->imp.memref_null = gen_caps & TEE_GEN_CAP_MEMREF_NULL;
++			return TEEC_SUCCESS;
++		}
++	}
++
+ 	for (n = 0; n < TEEC_MAX_DEV_SEQ; n++) {
+ 		uint32_t gen_caps = 0;
+ 
+

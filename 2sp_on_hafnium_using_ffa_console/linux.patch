@@ -1,0 +1,69 @@
+diff --git a/drivers/firmware/arm_ffa/driver.c b/drivers/firmware/arm_ffa/driver.c
+index 121f4fc90..3a1b62775 100644
+--- a/drivers/firmware/arm_ffa/driver.c
++++ b/drivers/firmware/arm_ffa/driver.c
+@@ -675,12 +675,29 @@ void ffa_device_match_uuid(struct ffa_device *ffa_dev, const uuid_t *uuid)
+ 	kfree(pbuf);
+ }
+ 
++static void init_mp_sp_secondary_ec(void *id)
++{
++	unsigned int vm_id = (unsigned int)((uintptr_t)id);
++	unsigned int nr_cpu = smp_processor_id();
++	ffa_value_t ret;
++
++	invoke_ffa_fn((ffa_value_t){
++				.a0 = FFA_RUN,
++				.a1 = (unsigned int)((vm_id << 16) | nr_cpu),
++			}, &ret);
++
++	if (ret.a0 != FFA_MSG_WAIT) {
++		pr_err("FFA_RUN failed VM id %x vCPU %u ret %lx\n", vm_id, nr_cpu, ret.a0);
++	}
++}
++
+ static void ffa_setup_partitions(void)
+ {
+ 	int count, idx;
+ 	uuid_t uuid;
+ 	struct ffa_device *ffa_dev;
+ 	struct ffa_partition_info *pbuf, *tpbuf;
++	struct cpumask mask;
+ 
+ 	count = ffa_partition_probe(&uuid_null, &pbuf);
+ 	if (count <= 0) {
+@@ -707,6 +724,13 @@ static void ffa_setup_partitions(void)
+ 		if (drv_info->version > FFA_VERSION_1_0 &&
+ 		    !(tpbuf->properties & FFA_PARTITION_AARCH64_EXEC))
+ 			_ffa_mode_32bit_set(ffa_dev);
++		if (tpbuf->id == 0x8001)
++			continue;
++		if (tpbuf->exec_ctxt == 1)
++			continue;
++		cpumask_setall(&mask);
++		cpumask_clear_cpu(0, &mask);
++		on_each_cpu_mask(&mask, init_mp_sp_secondary_ec, (void *)((uintptr_t)tpbuf->id), 0);
+ 	}
+ 	kfree(pbuf);
+ }
+diff --git a/drivers/tee/optee/device.c b/drivers/tee/optee/device.c
+index 64f0e047c..6b0055f81 100644
+--- a/drivers/tee/optee/device.c
++++ b/drivers/tee/optee/device.c
+@@ -142,10 +142,12 @@ static int __optee_enumerate_devices(u32 func)
+ 	num_devices = shm_size / sizeof(uuid_t);
+ 
+ 	for (idx = 0; idx < num_devices; idx++) {
+-		rc = optee_register_device(&device_uuid[idx]);
+-		if (rc)
+-			goto out_shm;
++		pr_info("optee_register_device idex %u", idx);
++		// rc = optee_register_device(&device_uuid[idx]);
++		// if (rc)
++		// 	goto out_shm;
+ 	}
++	rc = 0;
+ 
+ out_shm:
+ 	tee_shm_free(device_shm);
+

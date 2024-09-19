@@ -1,0 +1,697 @@
+NOTICE:  Booting Trusted Firmware
+NOTICE:  BL1: v2.10.0	(release):v2.10
+NOTICE:  BL1: Built : 05:13:55, Sep 12 2024
+WARNING: Firmware Image Package header check failed.
+NOTICE:  BL1: Booting BL2
+NOTICE:  BL2: v2.10.0	(release):v2.10
+NOTICE:  BL2: Built : 05:13:55, Sep 12 2024
+WARNING: Firmware Image Package header check failed.
+WARNING: Firmware Image Package header check failed.
+WARNING: Firmware Image Package header check failed.
+WARNING: Firmware Image Package header check failed.
+WARNING: Firmware Image Package header check failed.
+WARNING: Firmware Image Package header check failed.
+WARNING: Firmware Image Package header check failed.
+NOTICE:  BL1: Booting BL31
+NOTICE:  BL31: v2.10.0	(release):v2.10
+NOTICE:  BL31: Built : 05:13:55, Sep 12 2024
+INFO: Initializing Hafnium (SPMC)
+INFO: text: 0xe100000 - 0xe127000
+INFO: rodata: 0xe127000 - 0xe12e000
+INFO: data: 0xe12e000 - 0xe218000
+INFO: stacks: 0xe220000 - 0xe230000
+INFO: Supported bits in physical address: 48
+INFO: Stage 2 has 4 page table levels with 1 pages at the root.
+INFO: Stage 1 has 4 page table levels with 1 pages at the root.
+INFO: Memory range:  0xe000000 - 0xeffffff
+INFO: Loading VM id 0x8001: op-tee1.
+INFO: Loaded with 4 vCPUs, entry at 0xe300000.
+INFO: Loading VM id 0x8002: op-tee2.
+INFO: Loaded with 4 vCPUs, entry at 0xe980000.
+INFO: Hafnium initialisation completed
+SP 8001: D/TC:0   get_fdt_from_boot_info:1313 Boot info descriptor name "                "
+SP 8001: D/TC:0   core_mmu_set_secure_memory:156 Physical secure memory base 0xe300000 size 0x680000
+SP 8001: D/TC:0   add_phys_mem:752 ram_start type TEE_RAM_RO 0x0e300000 size 0x00004000
+SP 8001: D/TC:0   add_phys_mem:752 VCORE_UNPG_RX_PA type TEE_RAM_RX 0x0e304000 size 0x00084000
+SP 8001: D/TC:0   add_phys_mem:752 VCORE_UNPG_RW_PA type TEE_RAM_RW 0x0e388000 size 0x0017c000
+SP 8001: D/TC:0   add_phys_mem:752 ta_base type TA_RAM 0x0e504000 size 0x0047c000
+SP 8001: D/TC:0   add_phys_mem:752 CONSOLE_UART_BASE type IO_SEC 0x09000000 size 0x00200000
+SP 8001: D/TC:0   add_va_space:796 type RES_VASPACE size 0x00a00000
+SP 8001: D/TC:0   add_va_space:796 type SHM_VASPACE size 0x02000000
+SP 8001: D/TC:0   dump_mmap_table:923 type TEE_RAM_RO   va 0x0e300000..0x0e303fff pa 0x0e300000..0x0e303fff size 0x00004000 (smallpg)
+SP 8001: D/TC:0   dump_mmap_table:923 type TEE_RAM_RX   va 0x0e304000..0x0e387fff pa 0x0e304000..0x0e387fff size 0x00084000 (smallpg)
+SP 8001: D/TC:0   dump_mmap_table:923 type TEE_RAM_RW   va 0x0e388000..0x0e503fff pa 0x0e388000..0x0e503fff size 0x0017c000 (smallpg)
+SP 8001: D/TC:0   dump_mmap_table:923 type TA_RAM       va 0x0e504000..0x0e97ffff pa 0x0e504000..0x0e97ffff size 0x0047c000 (smallpg)
+SP 8001: D/TC:0   dump_mmap_table:923 type RES_VASPACE  va 0x0ea00000..0x0f3fffff pa 0x00000000..0x009fffff size 0x00a00000 (pgdir)
+SP 8001: D/TC:0   dump_mmap_table:923 type SHM_VASPACE  va 0x0f400000..0x113fffff pa 0x00000000..0x01ffffff size 0x02000000 (pgdir)
+SP 8001: D/TC:0   dump_mmap_table:923 type IO_SEC       va 0x11400000..0x115fffff pa 0x09000000..0x091fffff size 0x00200000 (pgdir)
+SP 8001: D/TC:0   core_mmu_xlat_table_alloc:527 xlat tables used 1 / 5
+SP 8001: D/TC:0   core_mmu_xlat_table_alloc:527 xlat tables used 2 / 5
+SP 8001: D/TC:0   core_mmu_xlat_table_alloc:527 xlat tables used 3 / 5
+SP 8001: D/TC:0   core_mmu_xlat_table_alloc:527 xlat tables used 4 / 5
+SP 8001: I/TC: 
+SP 8001: I/TC: No non-secure external DT
+SP 8001: I/TC: manifest DT found
+SP 8001: I/TC: Embedded DTB found
+SP 8001: D/TC:0 0 get_console_node_from_dt:90 No console directive from DTB
+SP 8001: I/TC: OP-TEE version: 4.3.0-99-g9f32a1a2f (gcc version 11.3.1 20220712 (Arm GNU Toolchain 11.3.Rel1)) #2 Thu Sep 12 05:02:34 UTC 2024 aarch64
+SP 8001: I/TC: WARNING: This OP-TEE configuration might be insecure!
+SP 8001: I/TC: WARNING: Please check https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html
+SP 8001: I/TC: Primary CPU initializing
+SP 8001: D/TC:0 0 do_init_calls:19 preinitcall level 2 mapped_shm_init()
+SP 8001: D/TC:0 0 mapped_shm_init:750 Shared memory address range: 0xf400000, 0x11400000
+SP 8001: D/TC:0 0 do_init_calls:19 early_initcall level 1 nex_init_periodic_callback()
+SP 8001: D/TC:0 0 nex_init_periodic_callback:155 Adding a periodic callout
+SP 8001: D/TC:0 0 do_init_calls:19 early_initcall level 1 nex_init_test_wd()
+SP 8001: D/TC:0 0 do_init_calls:19 early_initcall level 2 probe_dt_drivers_early()
+SP 8001: D/TC:0 0 add_node_to_probe:705 element: dt-test-consumer on node dt-test-consumer
+SP 8001: D/TC:0 0 add_node_to_probe:705 element: simple-bus on node dt-test-bus-b0
+SP 8001: D/TC:0 0 add_node_to_probe:705 element: dt-test-crypt-consumer on node dt-test-crypt-consumer
+SP 8001: D/TC:0 0 probe_driver_node:513 element: dt-test-crypt-consumer on node dt-test-crypt-consumer deferred 1 time(s)
+SP 8001: D/TC:0 0 add_node_to_probe:705 element: simple-bus on node dt-test-bus-b1
+SP 8001: D/TC:0 0 probe_driver_node:507 element: simple-bus on node dt-test-bus-b0 initialized
+SP 8001: D/TC:0 0 probe_driver_node:513 element: dt-test-consumer on node dt-test-consumer deferred 1 time(s)
+SP 8001: D/TC:0 0 probe_driver_node:513 element: dt-test-consumer on node dt-test-consumer deferred 2 time(s)
+SP 8001: D/TC:0 0 add_node_to_probe:705 element: simple-bus on node dt-test-bus-b2
+SP 8001: D/TC:0 0 probe_driver_node:507 element: simple-bus on node dt-test-bus-b1 initialized
+SP 8001: D/TC:0 0 probe_driver_node:513 element: dt-test-crypt-consumer on node dt-test-crypt-consumer deferred 2 time(s)
+SP 8001: D/TC:0 0 probe_driver_node:513 element: dt-test-crypt-consumer on node dt-test-crypt-consumer deferred 3 time(s)
+SP 8001: D/TC:0 0 add_node_to_probe:705 element: simple-bus on node dt-test-bus-b3
+SP 8001: D/TC:0 0 probe_driver_node:507 element: simple-bus on node dt-test-bus-b2 initialized
+SP 8001: D/TC:0 0 probe_driver_node:513 element: dt-test-consumer on node dt-test-consumer deferred 3 time(s)
+SP 8001: D/TC:0 0 probe_driver_node:513 element: dt-test-consumer on node dt-test-consumer deferred 4 time(s)
+SP 8001: D/TC:0 0 add_node_to_probe:705 element: dt_test_gpio_provider on node dt-test-provider@0
+SP 8001: D/TC:0 0 add_node_to_probe:705 element: dt_test_rstctrl_provider on node dt-test-provider@0
+SP 8001: D/TC:0 0 add_node_to_probe:705 element: dt_test_clock_provider on node dt-test-provider@0
+SP 8001: D/TC:0 0 probe_driver_node:507 element: simple-bus on node dt-test-bus-b3 initialized
+SP 8001: D/TC:0 0 probe_driver_node:513 element: dt-test-crypt-consumer on node dt-test-crypt-consumer deferred 4 time(s)
+SP 8001: D/TC:0 0 probe_driver_node:513 element: dt-test-crypt-consumer on node dt-test-crypt-consumer deferred 5 time(s)
+SP 8001: D/TC:0 0 clk_register:125 Registered clock dt_test-clk3, freq 0
+SP 8001: D/TC:0 0 clk_register:125 Registered clock dt_test-clk7, freq 0
+SP 8001: D/TC:0 0 probe_driver_node:507 element: dt_test_clock_provider on node dt-test-provider@0 initialized
+SP 8001: D/TC:0 0 probe_driver_node:507 element: dt_test_rstctrl_provider on node dt-test-provider@0 initialized
+SP 8001: D/TC:0 0 probe_driver_node:507 element: dt_test_gpio_provider on node dt-test-provider@0 initialized
+SP 8001: D/TC:0 0 probe_driver_node:507 element: dt-test-consumer on node dt-test-consumer initialized
+SP 8001: D/TC:0 0 probe_driver_node:513 element: dt-test-crypt-consumer on node dt-test-crypt-consumer deferred 6 time(s)
+SP 8001: D/TC:0 0 process_probe_list:654 Unresolved dependencies after 6 rounds, 6 deferred
+SP 8001: D/TC:0 0 probe_dt_drivers_early:840 Deferred drivers probing
+SP 8001: D/TC:0 0 print_probe_list:461 Probe list: 1 elements
+SP 8001: D/TC:0 0 print_probe_list:463 |- Driver dt-test-crypt-consumer probes on node dt-test-crypt-consumer
+SP 8001: D/TC:0 0 print_probe_list:467 `- Probe list end
+SP 8001: D/TC:0 0 print_probe_list:473 Failed list: 0 elements
+SP 8001: D/TC:0 0 print_probe_list:478 `- Failed list end
+SP 8001: D/TC:0 0 do_init_calls:19 service_initcall level 1 tee_cryp_init()
+SP 8001: D/TC:0 0 do_init_calls:19 service_initcall level 2 spmc_init()
+SP 8001: D/TC:0 0 spmc_init:2633 SPMC reported version 1.1
+SP 8001: D/TC:0 0 spmc_init:2641 Using version 1.1
+SP 8001: D/TC:0 0 spmc_init:2649 SPMC ID 0x8000
+SP 8001: D/TC:0 0 spmc_init:2652 OP-TEE endpoint ID 0x8001
+SP 8001: D/TC:0 0 spmc_init:2656 Asynchronous notifications are ready
+SP 8001: D/TC:0 0 do_init_calls:19 service_initcall level 2 check_ta_store()
+SP 8001: D/TC:0 0 check_ta_store:449 TA store: "early TA"
+SP 8001: D/TC:0 0 check_ta_store:449 TA store: "Secure Storage TA"
+SP 8001: D/TC:0 0 check_ta_store:449 TA store: "REE"
+SP 8001: D/TC:0 0 do_init_calls:19 service_initcall level 2 early_ta_init()
+SP 8001: D/TC:0 0 early_ta_init:56 Early TA f04a0fe7-1f5d-4b9b-abf7-619b85b4ce8c size 48960 (compressed, uncompressed 109352)
+SP 8001: D/TC:0 0 do_init_calls:19 service_initcall level 2 verify_pseudo_tas_conformance()
+SP 8001: D/TC:0 0 do_init_calls:19 service_initcall level 3 tee_fs_init_key_manager()
+SP 8001: D/TC:0 0 do_init_calls:19 driver_initcall level 1 probe_dt_drivers()
+SP 8001: D/TC:0 0 probe_driver_node:507 element: dt-test-crypt-consumer on node dt-test-crypt-consumer initialized
+SP 8001: D/TC:0 0 do_init_calls:19 driver_initcall level 2 init_multi_core_panic_handler()
+SP 8001: D/TC:0 0 do_init_calls:19 driver_initcall level 2 mobj_init()
+SP 8001: D/TC:0 0 do_init_calls:19 driver_initcall level 2 default_mobj_init()
+SP 8001: D/TC:0 0 do_init_calls:19 driver_initcall level 2 ftmn_boot_tests()
+SP 8001: D/TC:0 0 ftmn_boot_tests:198 Calling simple_call()
+SP 8001: D/TC:0 0 ftmn_boot_tests:198 Return from simple_call()
+SP 8001: D/TC:0 0 ftmn_boot_tests:199 Calling two_level_call()
+SP 8001: D/TC:0 0 ftmn_boot_tests:199 Return from two_level_call()
+SP 8001: D/TC:0 0 ftmn_boot_tests:200 Calling chained_calls()
+SP 8001: D/TC:0 0 ftmn_boot_tests:200 Return from chained_calls()
+SP 8001: D/TC:0 0 ftmn_boot_tests:202 *************************************************
+SP 8001: D/TC:0 0 ftmn_boot_tests:203 **************  Tests complete  *****************
+SP 8001: D/TC:0 0 ftmn_boot_tests:204 *************************************************
+SP 8001: D/TC:0 0 do_init_calls:19 driver_initcall level 3 release_probe_lists()
+SP 8001: D/TC:0 0 do_init_calls:19 driver_initcall level 3 dt_test_release()
+SP 8001: D/TC:0 0 do_init_calls:19 finalcall level 1 release_manifest_dt()
+SP 8001: D/TC:0 0 do_init_calls:19 finalcall level 1 release_external_dt()
+SP 8001: I/TC: Primary CPU switching to normal world boot
+INFO: Initialized VM: 0x8001, boot_order: 0
+SP 8002: D/TC:0   get_fdt_from_boot_info:1313 Boot info descriptor name "                "
+SP 8002: D/TC:0   core_mmu_set_secure_memory:156 Physical secure memory base 0xe980000 size 0x680000
+SP 8002: D/TC:0   add_phys_mem:752 ram_start type TEE_RAM_RO 0x0e980000 size 0x00004000
+SP 8002: D/TC:0   add_phys_mem:752 VCORE_UNPG_RX_PA type TEE_RAM_RX 0x0e984000 size 0x00084000
+SP 8002: D/TC:0   add_phys_mem:752 VCORE_UNPG_RW_PA type TEE_RAM_RW 0x0ea08000 size 0x0017c000
+SP 8002: D/TC:0   add_phys_mem:752 ta_base type TA_RAM 0x0eb84000 size 0x0047c000
+SP 8002: D/TC:0   add_phys_mem:752 CONSOLE_UART_BASE type IO_SEC 0x09000000 size 0x00200000
+SP 8002: D/TC:0   add_va_space:796 type RES_VASPACE size 0x00a00000
+SP 8002: D/TC:0   add_va_space:796 type SHM_VASPACE size 0x02000000
+SP 8002: D/TC:0   dump_mmap_table:923 type TEE_RAM_RO   va 0x0e980000..0x0e983fff pa 0x0e980000..0x0e983fff size 0x00004000 (smallpg)
+SP 8002: D/TC:0   dump_mmap_table:923 type TEE_RAM_RX   va 0x0e984000..0x0ea07fff pa 0x0e984000..0x0ea07fff size 0x00084000 (smallpg)
+SP 8002: D/TC:0   dump_mmap_table:923 type TEE_RAM_RW   va 0x0ea08000..0x0eb83fff pa 0x0ea08000..0x0eb83fff size 0x0017c000 (smallpg)
+SP 8002: D/TC:0   dump_mmap_table:923 type TA_RAM       va 0x0eb84000..0x0effffff pa 0x0eb84000..0x0effffff size 0x0047c000 (smallpg)
+SP 8002: D/TC:0   dump_mmap_table:923 type RES_VASPACE  va 0x0f000000..0x0f9fffff pa 0x00000000..0x009fffff size 0x00a00000 (pgdir)
+SP 8002: D/TC:0   dump_mmap_table:923 type SHM_VASPACE  va 0x0fa00000..0x119fffff pa 0x00000000..0x01ffffff size 0x02000000 (pgdir)
+SP 8002: D/TC:0   dump_mmap_table:923 type IO_SEC       va 0x11a00000..0x11bfffff pa 0x09000000..0x091fffff size 0x00200000 (pgdir)
+SP 8002: D/TC:0   core_mmu_xlat_table_alloc:527 xlat tables used 1 / 5
+SP 8002: D/TC:0   core_mmu_xlat_table_alloc:527 xlat tables used 2 / 5
+SP 8002: D/TC:0   core_mmu_xlat_table_alloc:527 xlat tables used 3 / 5
+SP 8002: I/TC: 
+SP 8002: I/TC: No non-secure external DT
+SP 8002: I/TC: manifest DT found
+SP 8002: I/TC: Embedded DTB found
+SP 8002: D/TC:0 0 get_console_node_from_dt:90 No console directive from DTB
+SP 8002: I/TC: OP-TEE version: 4.3.0-99-g9f32a1a2f (gcc version 11.3.1 20220712 (Arm GNU Toolchain 11.3.Rel1)) #2 Thu Sep 12 05:02:34 UTC 2024 aarch64
+SP 8002: I/TC: WARNING: This OP-TEE configuration might be insecure!
+SP 8002: I/TC: WARNING: Please check https://optee.readthedocs.io/en/latest/architecture/porting_guidelines.html
+SP 8002: I/TC: Primary CPU initializing
+SP 8002: D/TC:0 0 do_init_calls:19 preinitcall level 2 mapped_shm_init()
+SP 8002: D/TC:0 0 mapped_shm_init:750 Shared memory address range: 0xfa00000, 0x11a00000
+SP 8002: D/TC:0 0 do_init_calls:19 early_initcall level 1 nex_init_periodic_callback()
+SP 8002: D/TC:0 0 nex_init_periodic_callback:155 Adding a periodic callout
+SP 8002: D/TC:0 0 do_init_calls:19 early_initcall level 1 nex_init_test_wd()
+SP 8002: D/TC:0 0 do_init_calls:19 early_initcall level 2 probe_dt_drivers_early()
+SP 8002: D/TC:0 0 add_node_to_probe:705 element: dt-test-consumer on node dt-test-consumer
+SP 8002: D/TC:0 0 add_node_to_probe:705 element: simple-bus on node dt-test-bus-b0
+SP 8002: D/TC:0 0 add_node_to_probe:705 element: dt-test-crypt-consumer on node dt-test-crypt-consumer
+SP 8002: D/TC:0 0 probe_driver_node:513 element: dt-test-crypt-consumer on node dt-test-crypt-consumer deferred 1 time(s)
+SP 8002: D/TC:0 0 add_node_to_probe:705 element: simple-bus on node dt-test-bus-b1
+SP 8002: D/TC:0 0 probe_driver_node:507 element: simple-bus on node dt-test-bus-b0 initialized
+SP 8002: D/TC:0 0 probe_driver_node:513 element: dt-test-consumer on node dt-test-consumer deferred 1 time(s)
+SP 8002: D/TC:0 0 probe_driver_node:513 element: dt-test-consumer on node dt-test-consumer deferred 2 time(s)
+SP 8002: D/TC:0 0 add_node_to_probe:705 element: simple-bus on node dt-test-bus-b2
+SP 8002: D/TC:0 0 probe_driver_node:507 element: simple-bus on node dt-test-bus-b1 initialized
+SP 8002: D/TC:0 0 probe_driver_node:513 element: dt-test-crypt-consumer on node dt-test-crypt-consumer deferred 2 time(s)
+SP 8002: D/TC:0 0 probe_driver_node:513 element: dt-test-crypt-consumer on node dt-test-crypt-consumer deferred 3 time(s)
+SP 8002: D/TC:0 0 add_node_to_probe:705 element: simple-bus on node dt-test-bus-b3
+SP 8002: D/TC:0 0 probe_driver_node:507 element: simple-bus on node dt-test-bus-b2 initialized
+SP 8002: D/TC:0 0 probe_driver_node:513 element: dt-test-consumer on node dt-test-consumer deferred 3 time(s)
+SP 8002: D/TC:0 0 probe_driver_node:513 element: dt-test-consumer on node dt-test-consumer deferred 4 time(s)
+SP 8002: D/TC:0 0 add_node_to_probe:705 element: dt_test_gpio_provider on node dt-test-provider@0
+SP 8002: D/TC:0 0 add_node_to_probe:705 element: dt_test_rstctrl_provider on node dt-test-provider@0
+SP 8002: D/TC:0 0 add_node_to_probe:705 element: dt_test_clock_provider on node dt-test-provider@0
+SP 8002: D/TC:0 0 probe_driver_node:507 element: simple-bus on node dt-test-bus-b3 initialized
+SP 8002: D/TC:0 0 probe_driver_node:513 element: dt-test-crypt-consumer on node dt-test-crypt-consumer deferred 4 time(s)
+SP 8002: D/TC:0 0 probe_driver_node:513 element: dt-test-crypt-consumer on node dt-test-crypt-consumer deferred 5 time(s)
+SP 8002: D/TC:0 0 clk_register:125 Registered clock dt_test-clk3, freq 0
+SP 8002: D/TC:0 0 clk_register:125 Registered clock dt_test-clk7, freq 0
+SP 8002: D/TC:0 0 probe_driver_node:507 element: dt_test_clock_provider on node dt-test-provider@0 initialized
+SP 8002: D/TC:0 0 probe_driver_node:507 element: dt_test_rstctrl_provider on node dt-test-provider@0 initialized
+SP 8002: D/TC:0 0 probe_driver_node:507 element: dt_test_gpio_provider on node dt-test-provider@0 initialized
+SP 8002: D/TC:0 0 probe_driver_node:507 element: dt-test-consumer on node dt-test-consumer initialized
+SP 8002: D/TC:0 0 probe_driver_node:513 element: dt-test-crypt-consumer on node dt-test-crypt-consumer deferred 6 time(s)
+SP 8002: D/TC:0 0 process_probe_list:654 Unresolved dependencies after 6 rounds, 6 deferred
+SP 8002: D/TC:0 0 probe_dt_drivers_early:840 Deferred drivers probing
+SP 8002: D/TC:0 0 print_probe_list:461 Probe list: 1 elements
+SP 8002: D/TC:0 0 print_probe_list:463 |- Driver dt-test-crypt-consumer probes on node dt-test-crypt-consumer
+SP 8002: D/TC:0 0 print_probe_list:467 `- Probe list end
+SP 8002: D/TC:0 0 print_probe_list:473 Failed list: 0 elements
+SP 8002: D/TC:0 0 print_probe_list:478 `- Failed list end
+SP 8002: D/TC:0 0 do_init_calls:19 service_initcall level 1 tee_cryp_init()
+SP 8002: D/TC:0 0 do_init_calls:19 service_initcall level 2 spmc_init()
+SP 8002: D/TC:0 0 spmc_init:2633 SPMC reported version 1.1
+SP 8002: D/TC:0 0 spmc_init:2641 Using version 1.1
+SP 8002: D/TC:0 0 spmc_init:2649 SPMC ID 0x8000
+SP 8002: D/TC:0 0 spmc_init:2652 OP-TEE endpoint ID 0x8002
+SP 8002: D/TC:0 0 spmc_init:2656 Asynchronous notifications are ready
+SP 8002: D/TC:0 0 do_init_calls:19 service_initcall level 2 check_ta_store()
+SP 8002: D/TC:0 0 check_ta_store:449 TA store: "early TA"
+SP 8002: D/TC:0 0 check_ta_store:449 TA store: "Secure Storage TA"
+SP 8002: D/TC:0 0 check_ta_store:449 TA store: "REE"
+SP 8002: D/TC:0 0 do_init_calls:19 service_initcall level 2 early_ta_init()
+SP 8002: D/TC:0 0 early_ta_init:56 Early TA f04a0fe7-1f5d-4b9b-abf7-619b85b4ce8c size 48960 (compressed, uncompressed 109352)
+SP 8002: D/TC:0 0 do_init_calls:19 service_initcall level 2 verify_pseudo_tas_conformance()
+SP 8002: D/TC:0 0 do_init_calls:19 service_initcall level 3 tee_fs_init_key_manager()
+SP 8002: D/TC:0 0 do_init_calls:19 driver_initcall level 1 probe_dt_drivers()
+SP 8002: D/TC:0 0 probe_driver_node:507 element: dt-test-crypt-consumer on node dt-test-crypt-consumer initialized
+SP 8002: D/TC:0 0 do_init_calls:19 driver_initcall level 2 init_multi_core_panic_handler()
+SP 8002: D/TC:0 0 do_init_calls:19 driver_initcall level 2 mobj_init()
+SP 8002: D/TC:0 0 do_init_calls:19 driver_initcall level 2 default_mobj_init()
+SP 8002: D/TC:0 0 do_init_calls:19 driver_initcall level 2 ftmn_boot_tests()
+SP 8002: D/TC:0 0 ftmn_boot_tests:198 Calling simple_call()
+SP 8002: D/TC:0 0 ftmn_boot_tests:198 Return from simple_call()
+SP 8002: D/TC:0 0 ftmn_boot_tests:199 Calling two_level_call()
+SP 8002: D/TC:0 0 ftmn_boot_tests:199 Return from two_level_call()
+SP 8002: D/TC:0 0 ftmn_boot_tests:200 Calling chained_calls()
+SP 8002: D/TC:0 0 ftmn_boot_tests:200 Return from chained_calls()
+SP 8002: D/TC:0 0 ftmn_boot_tests:202 *************************************************
+SP 8002: D/TC:0 0 ftmn_boot_tests:203 **************  Tests complete  *****************
+SP 8002: D/TC:0 0 ftmn_boot_tests:204 *************************************************
+SP 8002: D/TC:0 0 do_init_calls:19 driver_initcall level 3 release_probe_lists()
+SP 8002: D/TC:0 0 do_init_calls:19 driver_initcall level 3 dt_test_release()
+SP 8002: D/TC:0 0 do_init_calls:19 finalcall level 1 release_manifest_dt()
+SP 8002: D/TC:0 0 do_init_calls:19 finalcall level 1 release_external_dt()
+SP 8002: I/TC: Primary CPU switching to normal world boot
+INFO: Initialized VM: 0x8002, boot_order: 1
+NOTICE: Finished initializing all VMs.
+
+
+U-Boot 2023.07.02 (Sep 12 2024 - 06:38:30 +0000)
+
+DRAM:  1 GiB
+Core:  51 devices, 14 uclasses, devicetree: board
+Flash: 32 MiB
+Loading Environment from Flash... *** Warning - bad CRC, using default environment
+
+In:    pl011@9000000
+Out:   pl011@9000000
+Err:   pl011@9000000
+Net:   eth0: virtio-net#31
+Hit any key to stop autoboot:  0 
+41724480 bytes read in 44 ms (904.4 MiB/s)
+27618785 bytes read in 28 ms (940.7 MiB/s)
+## Booting kernel from Legacy Image at 42200000 ...
+   Image Name:   Linux kernel
+   Created:      2024-09-12   6:38:32 UTC
+   Image Type:   AArch64 Linux Kernel Image (uncompressed)
+   Data Size:    41724416 Bytes = 39.8 MiB
+   Load Address: 42200000
+   Entry Point:  42200000
+   Verifying Checksum ... OK
+## Loading init Ramdisk from Legacy Image at 45000000 ...
+   Image Name:   Root file system
+   Created:      2024-09-12   6:39:10 UTC
+   Image Type:   AArch64 Linux RAMDisk Image (gzip compressed)
+   Data Size:    27618721 Bytes = 26.3 MiB
+   Load Address: 45000000
+   Entry Point:  45000000
+   Verifying Checksum ... OK
+## Flattened Device Tree blob at 40000000
+   Booting using the fdt blob at 0x40000000
+Working FDT set to 40000000
+   Loading Kernel Image
+   Loading Ramdisk to 7df44000, end 7f99ada1 ... OK
+   Loading Device Tree to 000000007df3e000, end 000000007df432a7 ... OK
+Working FDT set to 7df3e000
+
+Starting kernel ...
+
+SP 8001: I/TC: Secondary CPU 1 initializing
+SP 8001: I/TC: Secondary CPU 1 switching to normal world boot
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x000f0510]
+[    0.000000] Linux version 6.6.0-ga24278ea74b2-dirty (kawasaki@islo230045) (aarch64-linux-gnu-gcc (Arm GNU Toolchain 11.3.Rel1) 11.3.1 20220712, GNU ld (Arm GNU Toolchain 11.3.Rel1) 2.38.20220708) #2 SMP PREEMPT Thu Sep 12 06:36:19 UTC 2024
+[    0.000000] KASLR enabled
+[    0.000000] random: crng init done
+[    0.000000] Machine model: linux,dummy-virt
+[    0.000000] efi: UEFI not found.
+[    0.000000] NUMA: No NUMA configuration found
+[    0.000000] NUMA: Faking a node at [mem 0x0000000040000000-0x00000000820fffff]
+[    0.000000] NUMA: NODE_DATA [mem 0x81ede9c0-0x81ee0fff]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000040000000-0x00000000820fffff]
+[    0.000000]   DMA32    empty
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000040000000-0x00000000820fffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000040000000-0x00000000820fffff]
+[    0.000000] On node 0, zone DMA: 24320 pages in unavailable ranges
+[    0.000000] cma: Reserved 32 MiB at 0x000000007be00000 on node -1
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: MIGRATE_INFO_TYPE not supported.
+[    0.000000] psci: SMC Calling Convention v1.4
+[    0.000000] percpu: Embedded 22 pages/cpu s50728 r8192 d31192 u90112
+[    0.000000] Detected PIPT I-cache on CPU0
+[    0.000000] CPU features: detected: Address authentication (IMP DEF algorithm)
+[    0.000000] CPU features: detected: GIC system register CPU interface
+[    0.000000] CPU features: detected: HCRX_EL2 register
+[    0.000000] CPU features: detected: Virtualization Host Extensions
+[    0.000000] CPU features: detected: Hardware dirty bit management
+[    0.000000] CPU features: detected: Memory Tagging Extension
+[    0.000000] CPU features: detected: Asymmetric MTE Tag Check Fault
+[    0.000000] CPU features: detected: Spectre-v4
+[    0.000000] alternatives: applying boot alternatives
+[    0.000000] Kernel command line: console=ttyAMA0,115200 earlyprintk=serial,ttyAMA0,115200 root=/dev/ram
+[    0.000000] Unknown kernel command line parameters "earlyprintk=serial,ttyAMA0,115200", will be passed to user space.
+[    0.000000] Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.000000] Fallback order for Node 0: 0 
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 266364
+[    0.000000] Policy zone: DMA
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] software IO TLB: area num 2.
+[    0.000000] software IO TLB: mapped [mem 0x0000000077e00000-0x000000007be00000] (64MB)
+[    0.000000] Memory: 891040K/1082368K available (16576K kernel code, 4266K rwdata, 10568K rodata, 9152K init, 605K bss, 158560K reserved, 32768K cma-reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=2.
+[    0.000000] 	Trampoline variant of Tasks RCU enabled.
+[    0.000000] 	Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GICv3: GIC: Using split EOI/Deactivate mode
+[    0.000000] GICv3: 256 SPIs implemented
+[    0.000000] GICv3: 0 Extended SPIs implemented
+[    0.000000] Root IRQ handler: gic_handle_irq
+[    0.000000] GICv3: GICv3 features: 16 PPIs
+[    0.000000] GICv3: CPU0: found redistributor 0 region 0:0x00000000080a0000
+[    0.000000] ITS [mem 0x08080000-0x0809ffff]
+[    0.000000] ITS@0x0000000008080000: allocated 8192 Devices @40040000 (indirect, esz 8, psz 64K, shr 1)
+[    0.000000] ITS@0x0000000008080000: allocated 8192 Interrupt Collections @40050000 (flat, esz 8, psz 64K, shr 1)
+[    0.000000] GICv3: using LPI property table @0x0000000040060000
+[    0.000000] GICv3: CPU0: using allocated LPI pending table @0x0000000040070000
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000] arch_timer: cp15 timer(s) running at 62.50MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0x1ffffffffffffff max_cycles: 0x1cd42e208c, max_idle_ns: 881590405314 ns
+[    0.000087] sched_clock: 57 bits at 63MHz, resolution 16ns, wraps every 4398046511096ns
+[    0.018946] Console: colour dummy device 80x25
+[    0.024043] Calibrating delay loop (skipped), value calculated using timer frequency.. 125.00 BogoMIPS (lpj=250000)
+[    0.025019] pid_max: default: 32768 minimum: 301
+[    0.027565] LSM: initializing lsm=capability,integrity
+[    0.031104] Mount-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.031194] Mountpoint-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.066762] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    0.076570] RCU Tasks: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1.
+[    0.077189] RCU Tasks Trace: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1.
+[    0.078917] rcu: Hierarchical SRCU implementation.
+[    0.078963] rcu: 	Max phase no-delay instances is 1000.
+[    0.083905] Platform MSI: its@8080000 domain created
+[    0.085031] PCI/MSI: /intc@8000000/its@8080000 domain created
+[    0.085533] fsl-mc MSI: its@8080000 domain created
+[    0.089340] EFI services will not be available.
+[    0.090887] smp: Bringing up secondary CPUs ...
+[    0.109436] Detected PIPT I-cache on CPU1
+[    0.114479] GICv3: CPU1: found redistributor 1 region 0:0x00000000080c0000
+[    0.115734] GICv3: CPU1: using allocated LPI pending table @0x0000000040080000
+[    0.118441] CPU1: Booted secondary processor 0x0000000001 [0x000f0510]
+[    0.122828] smp: Brought up 1 node, 2 CPUs
+[    0.122878] SMP: Total of 2 processors activated.
+[    0.123069] CPU features: detected: Branch Target Identification
+[    0.123126] CPU features: detected: 32-bit EL0 Support
+[    0.123145] CPU features: detected: 32-bit EL1 Support
+[    0.123157] CPU features: detected: ARMv8.4 Translation Table Level
+[    0.123192] CPU features: detected: Data cache clean to the PoU not required for I/D coherence
+[    0.123243] CPU features: detected: Common not Private translations
+[    0.123256] CPU features: detected: CRC32 instructions
+[    0.123267] CPU features: detected: Data independent timing control (DIT)
+[    0.123279] CPU features: detected: E0PD
+[    0.123291] CPU features: detected: Enhanced Privileged Access Never
+[    0.123302] CPU features: detected: Enhanced Virtualization Traps
+[    0.123313] CPU features: detected: Fine Grained Traps
+[    0.123382] CPU features: detected: Generic authentication (IMP DEF algorithm)
+[    0.123395] CPU features: detected: RCpc load-acquire (LDAPR)
+[    0.123406] CPU features: detected: LSE atomic instructions
+[    0.123466] CPU features: detected: Privileged Access Never
+[    0.123479] CPU features: detected: RAS Extension Support
+[    0.123490] CPU features: detected: Random Number Generator
+[    0.123501] CPU features: detected: Speculation barrier (SB)
+[    0.123512] CPU features: detected: Stage-2 Force Write-Back
+[    0.123524] CPU features: detected: TLB range maintenance instructions
+[    0.123572] CPU features: detected: Speculative Store Bypassing Safe (SSBS)
+[    0.123584] CPU features: detected: Scalable Vector Extension
+[    0.135299] SVE: maximum available vector length 256 bytes per vector
+[    0.137545] SVE: default vector length 64 bytes per vector
+[    0.141762] CPU: All CPU(s) started at EL2
+[    0.141820] alternatives: applying system-wide alternatives
+[    0.198114] devtmpfs: initialized
+[    0.232304] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.233163] futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+[    0.240025] pinctrl core: initialized pinctrl subsystem
+[    0.254903] DMI not present or invalid.
+[    0.270594] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.282902] DMA: preallocated 128 KiB GFP_KERNEL pool for atomic allocations
+[    0.283643] DMA: preallocated 128 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[    0.284026] DMA: preallocated 128 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[    0.284332] audit: initializing netlink subsys (disabled)
+[    0.286776] audit: type=2000 audit(0.256:1): state=initialized audit_enabled=0 res=1
+[    0.297878] thermal_sys: Registered thermal governor 'step_wise'
+[    0.298118] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.299808] cpuidle: using governor menu
+[    0.301470] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    0.302293] ASID allocator initialised with 65536 entries
+[    0.316450] Serial: AMBA PL011 UART driver
+[    0.388710] 9000000.pl011: ttyAMA0 at MMIO 0x9000000 (irq = 14, base_baud = 0) is a PL011 rev1
+[    0.390236] printk: console [ttyAMA0] enabled
+[    0.444821] Modules: 2G module region forced by RANDOMIZE_MODULE_REGION_FULL
+[    0.445194] Modules: 0 pages in range for non-PLT usage
+[    0.445228] Modules: 513936 pages in range for PLT usage
+[    0.452890] HugeTLB: registered 1.00 GiB page size, pre-allocated 0 pages
+[    0.454053] HugeTLB: 0 KiB vmemmap can be freed for a 1.00 GiB page
+[    0.454680] HugeTLB: registered 32.0 MiB page size, pre-allocated 0 pages
+[    0.455293] HugeTLB: 0 KiB vmemmap can be freed for a 32.0 MiB page
+[    0.456206] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.456810] HugeTLB: 0 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.457359] HugeTLB: registered 64.0 KiB page size, pre-allocated 0 pages
+[    0.457956] HugeTLB: 0 KiB vmemmap can be freed for a 64.0 KiB page
+[    0.477538] ACPI: Interpreter disabled.
+[    0.488696] iommu: Default domain type: Translated
+[    0.489601] iommu: DMA domain TLB invalidation policy: strict mode
+[    0.493846] SCSI subsystem initialized
+[    0.497279] usbcore: registered new interface driver usbfs
+[    0.498135] usbcore: registered new interface driver hub
+[    0.498588] usbcore: registered new device driver usb
+[    0.502482] pps_core: LinuxPPS API ver. 1 registered
+[    0.502742] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.503218] PTP clock support registered
+[    0.504046] EDAC MC: Ver: 3.0.0
+[    0.515777] ARM FF-A: Driver version 1.0
+[    0.516262] ARM FF-A: Firmware version 1.1 found
+[    0.516757] ARM FF-A: Firmware version higher than driver version, downgrading
+SP 8002: I/TC: Secondary CPU 1 initializing
+SP 8002: I/TC: Secondary CPU 1 switching to normal world boot
+[    0.559891] scmi_core: SCMI protocol bus registered
+[    0.568439] FPGA manager framework
+[    0.570675] Advanced Linux Sound Architecture Driver Initialized.
+[    0.597875] vgaarb: loaded
+[    0.608694] clocksource: Switched to clocksource arch_sys_counter
+[    0.616079] VFS: Disk quotas dquot_6.6.0
+[    0.616932] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.624482] pnp: PnP ACPI: disabled
+[    0.699279] NET: Registered PF_INET protocol family
+[    0.703902] IP idents hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    0.713688] tcp_listen_portaddr_hash hash table entries: 1024 (order: 2, 16384 bytes, linear)
+[    0.714332] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.714926] TCP established hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.715882] TCP bind hash table entries: 16384 (order: 7, 524288 bytes, linear)
+[    0.716927] TCP: Hash tables configured (established 16384 bind 16384)
+[    0.719197] UDP hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    0.720180] UDP-Lite hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    0.722187] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.727948] RPC: Registered named UNIX socket transport module.
+[    0.728380] RPC: Registered udp transport module.
+[    0.728681] RPC: Registered tcp transport module.
+[    0.728986] RPC: Registered tcp-with-tls transport module.
+[    0.729333] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.729894] PCI: CLS 0 bytes, default 64
+[    0.737159] kvm [1]: IPA Size Limit: 48 bits
+[    0.738594] kvm [1]: GICv3: no GICV resource entry
+[    0.739104] kvm [1]: disabling GICv2 emulation
+[    0.739947] kvm [1]: GIC system register CPU interface enabled
+[    0.741396] Unpacking initramfs...
+[    0.741804] kvm [1]: vgic interrupt IRQ9
+[    0.743188] kvm [1]: VHE mode initialized successfully
+[    0.750881] Initialise system trusted keyrings
+[    0.756440] workingset: timestamp_bits=42 max_order=18 bucket_order=0
+[    0.760457] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.765128] NFS: Registering the id_resolver key type
+[    0.765884] Key type id_resolver registered
+[    0.766197] Key type id_legacy registered
+[    0.766870] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    0.767366] nfs4flexfilelayout_init: NFSv4 Flexfile Layout Driver Registering...
+[    0.769143] 9p: Installing v9fs 9p2000 file system support
+[    0.872903] Key type asymmetric registered
+[    0.873166] Asymmetric key parser 'x509' registered
+[    0.873637] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 245)
+[    0.874060] io scheduler mq-deadline registered
+[    0.874307] io scheduler kyber registered
+[    0.874842] io scheduler bfq registered
+[    0.913716] pl061_gpio 9030000.pl061: PL061 GPIO chip registered
+[    0.922463] pci-host-generic 4010000000.pcie: host bridge /pcie@10000000 ranges:
+[    0.923481] pci-host-generic 4010000000.pcie:       IO 0x003eff0000..0x003effffff -> 0x0000000000
+[    0.924516] pci-host-generic 4010000000.pcie:      MEM 0x0010000000..0x003efeffff -> 0x0010000000
+[    0.924952] pci-host-generic 4010000000.pcie:      MEM 0x8000000000..0xffffffffff -> 0x8000000000
+[    0.925806] pci-host-generic 4010000000.pcie: Memory resource size exceeds max for 32 bits
+[    0.926720] pci-host-generic 4010000000.pcie: ECAM at [mem 0x4010000000-0x401fffffff] for [bus 00-ff]
+[    0.929196] pci-host-generic 4010000000.pcie: PCI host bridge to bus 0000:00
+[    0.929731] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.930036] pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+[    0.930350] pci_bus 0000:00: root bus resource [mem 0x10000000-0x3efeffff]
+[    0.930640] pci_bus 0000:00: root bus resource [mem 0x8000000000-0xffffffffff]
+[    0.932652] pci 0000:00:00.0: [1b36:0008] type 00 class 0x060000
+[    0.936805] pci 0000:00:01.0: [1af4:1005] type 00 class 0x00ff00
+[    0.939102] pci 0000:00:01.0: reg 0x10: [io  0x1000-0x101f]
+[    0.941225] pci 0000:00:01.0: reg 0x14: [mem 0x10000000-0x10000fff]
+[    0.946645] pci 0000:00:01.0: reg 0x20: [mem 0x10004000-0x10007fff 64bit pref]
+[    0.954145] pci 0000:00:01.0: BAR 4: assigned [mem 0x8000000000-0x8000003fff 64bit pref]
+[    0.955733] pci 0000:00:01.0: BAR 1: assigned [mem 0x10000000-0x10000fff]
+[    0.956083] pci 0000:00:01.0: BAR 0: assigned [io  0x1000-0x101f]
+[    0.974958] EINJ: ACPI disabled.
+[    1.072159] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    1.083179] SuperH (H)SCI(F) driver initialized
+[    1.085188] msm_serial: driver initialized
+[    1.087278] STM32 USART driver initialized
+[    1.131745] loop: module loaded
+[    1.135493] megasas: 07.725.01.00-rc1
+[    1.142551] physmap-flash 4000000.flash: physmap platform flash device: [mem 0x04000000-0x07ffffff]
+[    1.145542] 4000000.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+[    1.146439] Intel/Sharp Extended Query Table at 0x0031
+[    1.148382] Using buffer write method
+[    2.181330] Freeing initrd memory: 26968K
+[    2.354580] tun: Universal TUN/TAP device driver, 1.6
+[    2.366644] thunder_xcv, ver 1.0
+[    2.366935] thunder_bgx, ver 1.0
+[    2.367201] nicpf, ver 1.0
+[    2.372362] hns3: Hisilicon Ethernet Network Driver for Hip08 Family - version
+[    2.372695] hns3: Copyright (c) 2017 Huawei Corporation.
+[    2.373207] hclge is initializing
+[    2.373533] e1000: Intel(R) PRO/1000 Network Driver
+[    2.373749] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[    2.374136] e1000e: Intel(R) PRO/1000 Network Driver
+[    2.374360] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+[    2.374745] igb: Intel(R) Gigabit Ethernet Network Driver
+[    2.374984] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    2.375349] igbvf: Intel(R) Gigabit Virtual Function Network Driver
+[    2.375836] igbvf: Copyright (c) 2009 - 2012 Intel Corporation.
+[    2.377215] sky2: driver version 1.30
+[    2.382755] VFIO - User Level meta-driver version: 0.3
+[    2.410165] usbcore: registered new interface driver usb-storage
+[    2.441439] rtc-pl031 9010000.pl031: registered as rtc0
+[    2.443533] rtc-pl031 9010000.pl031: setting system clock to 2024-09-12T06:39:51 UTC (1726123191)
+[    2.451425] i2c_dev: i2c /dev entries driver
+[    2.491360] sdhci: Secure Digital Host Controller Interface driver
+[    2.491926] sdhci: Copyright(c) Pierre Ossman
+[    2.496087] Synopsys Designware Multimedia Card Interface Driver
+[    2.501490] sdhci-pltfm: SDHCI platform and OF driver helper
+[    2.511345] ledtrig-cpu: registered to indicate activity on CPUs
+[    2.514772] SMCCC: SOC_ID: ARCH_SOC_ID not implemented, skipping ....
+[    2.518921] usbcore: registered new interface driver usbhid
+[    2.519197] usbhid: USB HID core driver
+[    2.534086] hw perfevents: enabled with armv8_pmuv3 PMU driver, 7 counters available
+SP 8001: D/TC:0 0 mobj_ffa_get_by_cookie:512 Populating mobj from rx buffer, cookie 0
+SP 8001: D/TC:0 0 core_mmu_xlat_table_alloc:527 xlat tables used 5 / 5
+SP 8001: D/TC:? 0 tee_ta_init_pseudo_ta_session:303 Lookup pseudo TA 7011a688-ddde-4053-a5a9-7b3c4ddf13b8
+SP 8001: D/TC:? 0 tee_ta_init_pseudo_ta_session:315 Open device.pta
+SP 8001: D/TC:? 0 tee_ta_init_pseudo_ta_session:330 device.pta : 7011a688-ddde-4053-a5a9-7b3c4ddf13b8
+SP 8001: D/TC:0 0 mobj_ffa_get_by_cookie:510 cookie 0 resurrecting
+SP 8001: D/TC:0 0 mobj_ffa_get_by_cookie:510 cookie 0 resurrecting
+SP 8001: D/TC:0 0 mobj_ffa_get_by_cookie:512 Populating mobj from rx buffer, cookie 0x1
+[    2.545392] optee: revision 4.3 (9f32a1a2)
+[    2.642427] optee: optee_register_device idex 0
+SP 8001: D/TC:1 0 mobj_ffa_get_by_cookie:510 cookie 0 resurrecting
+SP 8001: D/TC:? 0 tee_ta_close_session:460 csess 0xe3b7b00 id 1
+SP 8001: D/TC:? 0 tee_ta_close_session:479 Destroy session
+[    2.642681] optee: optee_register_device idex 1
+[    2.706262] optee: initialized driver
+SP 8001: D/TC:1 0 mobj_ffa_get_by_cookie:510 cookie 0 resurrecting
+SP 8001: D/TC:? 0 tee_ta_init_session_with_context:557 Re-open trusted service 7011a688-ddde-4053-a5a9-7b3c4ddf13b8
+SP 8001: D/TC:1 0 mobj_ffa_get_by_cookie:510 cookie 0 resurrecting
+SP 8001: D/TC:1 0 mobj_ffa_get_by_cookie:510 cookie 0 resurrecting
+SP 8001: D/TC:1 0 mobj_ffa_get_by_cookie:512 Populating mobj from rx buffer, cookie 0x1
+[    2.712649] optee: revision 4.3 (9f32a1a2)
+[    2.784621] optee: optee_register_device idex 0
+SP 8001: D/TC:1 0 mobj_ffa_get_by_cookie:510 cookie 0 resurrecting
+SP 8001: D/TC:? 0 tee_ta_close_session:460 csess 0xe3b79b0 id 1
+SP 8001: D/TC:? 0 tee_ta_close_session:479 Destroy session
+[    2.784836] optee: optee_register_device idex 1
+[    2.809493] optee: initialized driver
+[    2.821576] NET: Registered PF_PACKET protocol family
+[    2.823024] 9pnet: Installing 9P2000 support
+[    2.824640] Key type dns_resolver registered
+[    2.862013] registered taskstats version 1
+[    2.863566] Loading compiled-in X.509 certificates
+[    2.895775] Key type encrypted registered
+[    2.904478] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    2.911434] clk: Disabling unused clocks
+[    2.912309] ALSA device list:
+[    2.912520]   No soundcards found.
+[    2.915801] uart-pl011 9000000.pl011: no DMA platform data
+[    2.977413] Freeing unused kernel memory: 9152K
+[    2.978845] Run /init as init process
+Saving 256 bits of creditable seed for next boot
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+Set permissions on /dev/tee*: OK
+Create/set permissions on /data/tee: OK
+Starting tee-supplicant: Using device /dev/teepriv0.
+*plugin*: init
+SP 8001: D/TC:1 0 mobj_ffa_get_by_cookie:510 cookie 0 resurrecting
+OK
+SP 8001: D/TC:? 0 tee_ta_init_session_with_context:557 Re-open trusted service 7011a688-ddde-4053-a5a9-7b3c4ddf13b8
+SP 8001: D/TC:1 0 mobj_ffa_get_by_cookie:510 cookie 0 resurrecting
+SP 8001: D/TC:1 0 mobj_ffa_get_by_cookie:510 cookie 0 resurrecting
+SP 8001: D/TC:? 0 tee_ta_close_session:460 csess 0xe3b79b0 id 1
+SP 8001: D/TC:? 0 tee_ta_close_session:479 Destroy session
+Starting network: OK
+Starting network (udhcpc): OK
+
+Welcome to Buildroot, type root or test to login
+buildroot login: root
+
+
+# xtest -d tee0 -t regression 1001
+Test ID: 1001
+Run test suite with level=0
+
+TEE test application started over tee0 TEE instance
+######################################################
+#
+# regression
+#
+######################################################
+ 
+* regression_1001 Core self tests
+SP 8001: D/TC:1 0 mobj_ffa_get_by_cookie:510 cookie 0 resurrecting
+SP 8001: D/TC:? 0 tee_ta_init_session_with_context:557 Re-open trusted service d96a5b40-c3e5-21e3-8794-1002a5d5c61b
+SP 8001: D/TC:? 0 create_ta:381 create entry point for pseudo TA "invoke_tests.pta"
+SP 8001: D/TC:? 0 open_session:394 open entry point for pseudo ta "invoke_tests.pta"
+o regression_1001.1 Core self tests
+SP 8001: D/TC:1 0 mobj_ffa_get_by_cookie:510 cookie 0 resurrecting
+  regression_1001.1 OK
+o regression_1001.2 Core dt_driver self tests
+SP 8001: D/TC:1 0 mobj_ffa_get_by_cookie:510 cookie 0 resurrecting
+  regression_1001.2 OK
+SP 8001: D/TC:1 0 mobj_ffa_get_by_cookie:510 cookie 0 resurrecting
+SP 8001: D/TC:? 0 tee_ta_close_session:460 csess 0xe3b5fa0 id 1
+SP 8001: D/TC:? 0 tee_ta_close_session:479 Destroy session
+SP 8001: D/TC:? 0 close_session:400 close entry point for pseudo ta "invoke_tests.pta"
+SP 8001: D/TC:? 0 destroy_ta:387 destroy entry point for pseudo ta "invoke_tests.pta"
+  regression_1001 OK
++-----------------------------------------------------
+Result of testsuite regression filtered by "1001":
+regression_1001 OK
++-----------------------------------------------------
+3 subtests of which 0 failed
+1 test case of which 0 failed
+106 test cases were skipped
+TEE test application done!
+# xtest -d tee1 -t regression 1001
+Test ID: 1001
+Run test suite with level=0
+
+TEE test application started over tee1 TEE instance
+######################################################
+#
+# regression
+#
+######################################################
+ 
+* regression_1001 Core self tests
+SP 8002: D/TC:0 0 mobj_ffa_get_by_cookie:510 cookie 0x1 resurrecting
+SP 8002: D/TC:? 0 tee_ta_init_session_with_context:557 Re-open trusted service d96a5b40-c3e5-21e3-8794-1002a5d5c61b
+SP 8002: D/TC:? 0 create_ta:381 create entry point for pseudo TA "invoke_tests.pta"
+SP 8002: D/TC:? 0 open_session:394 open entry point for pseudo ta "invoke_tests.pta"
+o regression_1001.1 Core self tests
+SP 8002: D/TC:0 0 mobj_ffa_get_by_cookie:510 cookie 0x1 resurrecting
+  regression_1001.1 OK
+o regression_1001.2 Core dt_driver self tests
+SP 8002: D/TC:0 0 mobj_ffa_get_by_cookie:510 cookie 0x1 resurrecting
+  regression_1001.2 OK
+SP 8002: D/TC:0 0 mobj_ffa_get_by_cookie:510 cookie 0x1 resurrecting
+SP 8002: D/TC:? 0 tee_ta_close_session:460 csess 0xea379b0 id 1
+SP 8002: D/TC:? 0 tee_ta_close_session:479 Destroy session
+SP 8002: D/TC:? 0 close_session:400 close entry point for pseudo ta "invoke_tests.pta"
+SP 8002: D/TC:? 0 destroy_ta:387 destroy entry point for pseudo ta "invoke_tests.pta"
+  regression_1001 OK
++-----------------------------------------------------
+Result of testsuite regression filtered by "1001":
+regression_1001 OK
++-----------------------------------------------------
+3 subtests of which 0 failed
+1 test case of which 0 failed
+106 test cases were skipped
+TEE test application done!
+
