@@ -1,0 +1,14 @@
+diff --git a/qemu_v8/spmc_el2_manifest.dts b/qemu_v8/spmc_el2_manifest.dts
+index bf267b2..090442d 100644
+--- a/qemu_v8/spmc_el2_manifest.dts
++++ b/qemu_v8/spmc_el2_manifest.dts
+@@ -62,7 +62,7 @@
+        /* VIRT_SECURE_MEM */
+        memory@0 {
+                device_type = "memory";
+-               reg = <0x0 0xe000000 0x1000000>;
++               reg = <0x0 0xe000000 0x2000000>;
+        };
+ 
+        /* NS memory */
+
