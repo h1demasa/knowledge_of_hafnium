@@ -6,6 +6,29 @@ You can run it by applying the patch file.
 The environment is written in repo.manifest.xml.  
 This is the same as [OP-TEE/manifest/qemu\_v8.xml](https://github.com/OP-TEE/manifest/blob/87c6a26d02bfba94b96af55c1521498773141f8a/qemu_v8.xml).  
 
+```sh
+$ cat /etc/os-release 
+PRETTY_NAME="Ubuntu 22.04.4 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.4 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
+
+$ uname -a
+Linux kawasaki 6.8.0-1014-azure #16~22.04.1-Ubuntu SMP Thu Aug 15 21:31:41 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+```
+
+## Get started with Hafnium
+
+
+
 ## Other Documents
 
 [Expanding TA Secure Memory on QEMUv8](https://github.com/apache/incubator-teaclave-trustzone-sdk/blob/no-std/docs/expanding-ta-secure-memory-on-qemuv8.md)  
