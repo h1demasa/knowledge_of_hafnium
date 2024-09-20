@@ -14,8 +14,9 @@ This is the same as [OP-TEE/manifest/qemu\_v8.xml](https://github.com/OP-TEE/man
 
 ## Acknowledgment
 
-Thanks for answering my questions. 
-Olivier Deprez(@odeprez)
+Thanks for answering my questions.   
+Olivier Deprez([@odeprez](https://github.com/odeprez))  
+Shinichi Miyazawa([@s-miyazawa](https://github.com/s-miyazawa))
 
 ---
 
