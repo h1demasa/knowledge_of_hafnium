@@ -27,6 +27,12 @@ Linux kawasaki 6.8.0-1014-azure #16~22.04.1-Ubuntu SMP Thu Aug 15 21:31:41 UTC 2
 
 ## Get started with Hafnium
 
+[Setting up repositories documents written by Japanese](https://github.com/s-miyazawa/optee-install/blob/main/optee-install.md)
+
+Add make command option with `SPMC_AT_EL=2` like this.
+```sh
+make SPMC_AT_EL=2 QEMU_USERNET_ENABLE=y QEMU_VIRTFS_ENABLE=y QEMU_VIRTFS_HOST_DIR=$(pwd)/../../mydev
+```
 
 
 ## Other Documents
