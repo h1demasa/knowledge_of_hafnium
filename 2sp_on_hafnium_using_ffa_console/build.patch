@@ -91,6 +91,100 @@ index 35c2f4b..0000000
 -		};
 -	};
 -};
+diff --git /dev/null b/qemu_v8/optee_sp1_manifest.dts
+create file mode 
+--- /dev/null
++++ b/qemu_v8/optee_sp1_manifest.dts
+@@ -0,0 +1,54 @@
++/*
++ * Copyright (c) 2020, Arm Limited. All rights reserved.
++ * Copyright (c) 2022, Linaro Limited
++ *
++ * SPDX-License-Identifier: BSD-3-Clause
++ *
++ * This file is a Partition Manifest (PM) for a minimal Secure Partition (SP)
++ * that has additional optional properties defined.
++ *
++ */
++
++/dts-v1/;
++
++/ {
++	compatible = "arm,ffa-manifest-1.0";
++
++	/* Properties */
++	description = "op-tee1";
++	ffa-version = <0x00010001>; /* 31:16 - Major, 15:0 - Minor */
++	uuid = <0xe0786148 0xe311f8e7 0x02005ebc 0x1bc5d5a5>;
++	id = <1>;
++	execution-ctx-count = <8>;
++	exception-level = <2>; /* S-EL1 */
++	execution-state = <0>; /* AARCH64 */
++	load-address = <0xe300000>;
++	mem-size = <0x680000>;	/* OP-TEE specific extension */
++	entrypoint-offset = <0x4000>;
++	xlat-granule = <0>; /* 4KiB */
++	boot-order = <0>;
++	messaging-method = <0x3>; /* Direct messaging only */
++	ns-interrupts-action = <1>; /* NS_ACTION_ME */
++	notification-support;
++
++	/* Boot protocol */
++	gp-register-num = <0x0>;
++
++	/* Boot Info */
++	boot-info {
++		compatible = "arm,ffa-manifest-boot-info";
++		ffa_manifest;
++	};
++};
+diff --git /dev/null b/qemu_v8/optee_sp2_manifest.dts
+create file mode 
+--- /dev/null
++++ b/qemu_v8/optee_sp2_manifest.dts
+@@ -0,0 +1,54 @@
++/*
++ * Copyright (c) 2020, Arm Limited. All rights reserved.
++ * Copyright (c) 2022, Linaro Limited
++ *
++ * SPDX-License-Identifier: BSD-3-Clause
++ *
++ * This file is a Partition Manifest (PM) for a minimal Secure Partition (SP)
++ * that has additional optional properties defined.
++ *
++ */
++
++/dts-v1/;
++
++/ {
++	compatible = "arm,ffa-manifest-1.0";
++
++	/* Properties */
++	description = "op-tee2";
++	ffa-version = <0x00010001>; /* 31:16 - Major, 15:0 - Minor */
++	uuid = <0xe0786148 0xe311f8e7 0x02005ebc 0x1bc5d5a5>;
++	id = <1>;
++	execution-ctx-count = <8>;
++	exception-level = <2>; /* S-EL1 */
++	execution-state = <0>; /* AARCH64 */
++	load-address = <0xe980000>;
++	mem-size = <0x680000>;	/* OP-TEE specific extension */
++	entrypoint-offset = <0x4000>;
++	xlat-granule = <0>; /* 4KiB */
++	boot-order = <1>;
++	messaging-method = <0x3>; /* Direct messaging only */
++	ns-interrupts-action = <1>; /* NS_ACTION_ME */
++	notification-support;
++
++	/* Boot protocol */
++	gp-register-num = <0x0>;
++
++	/* Boot Info */
++	boot-info {
++		compatible = "arm,ffa-manifest-boot-info";
++		ffa_manifest;
++	};
++};
 diff --git a/qemu_v8/sp_layout.json b/qemu_v8/sp_layout.json
 index c6a02a9..50754d6 100644
 --- a/qemu_v8/sp_layout.json
